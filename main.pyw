@@ -11,7 +11,7 @@ def rm(txt):
 def stripper(txt):
     lines = txt.splitlines()
     lines = [rm(l) for l in lines]
-    return "\n".join(lines)
+    return "\n\r".join(lines)
 
 
 def gui():
