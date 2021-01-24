@@ -5,7 +5,9 @@ from pyperclip import copy
 
 
 def rm(txt):
-    return re.sub(r"[\.|>]{3}\s?", "", txt, 1)
+    if txt == "...":
+        return " " * 4
+    return re.sub(r"[\.|>]{3}", "", txt, 1)
 
 
 def stripper(txt):
