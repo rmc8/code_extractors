@@ -1,17 +1,17 @@
+import re
+
 import PySimpleGUI as sg
 from pyperclip import copy
 
 
 def rm(txt):
-    txt = txt.replace("... ", "", 1)
-    txt = txt.replace(">>> ", "", 1)
-    return txt
+    return re.sub(r"[\.|>]{3}\s?", "", txt, 1)
 
 
 def stripper(txt):
     lines = txt.splitlines()
     lines = [rm(l) for l in lines]
-    return "\n\r".join(lines)
+    return "\r\n".join(lines)
 
 
 def gui():
